@@ -19,7 +19,7 @@
     ></v-text-field>
     
     
-    <v-btn  color='primary'  depressed >登陆</v-btn>
+    <v-btn  color='primary'  depressed @click="login()">登陆</v-btn>
     <!-- @是vue的语法，将click事件绑定到函数 -->
     <v-btn depressed @click=goSignUp>注册</v-btn>
   </div>
@@ -29,6 +29,21 @@
 export default {
   //methods代表声明一个函数
   methods:{
+    login(){
+      // let代表定义变量
+      let loginData={username:this.username,password:this.password}
+      // 使用Vue实例中注册的api变量
+      // .then是axios的回调方法=>获取返回结果
+      //=>函数：se6函数，定义一个匿名函数，使用当前环境
+      this.$api.user.login(loginData).then(responce=>{
+        console.log(responce);
+
+      });
+    },
+
+
+
+
     goSignUp(){
       //this.$router.push:是把一个路由推入栈
       this.$router.push({name:"SignUp"})
