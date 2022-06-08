@@ -16,7 +16,12 @@ auth的username在登录时，是用户名，但是在登陆后（第二次登�
 def verify_password(username, password):
     # 初始化auth
     from backend.data_base.user_table import User
+    print(username)
+    print(password)
     # 进行token校验
+
+
+
     user=User.check_token(username)
     # 如果检验结果错误，或者超时，就认为此时是登陆接口
     # 如果检验成功，就认为此时是其他接口（获取用例）

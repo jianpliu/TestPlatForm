@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import Flask
+from flask_cors import CORS
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 
@@ -48,6 +49,8 @@ app.config["SECRETY_KEY"]="SDE17CK"
 api=Api(app)
 db=SQLAlchemy(app)
 
+# 使用CORS解决同源问题
+CORS(app)
 
 def router():
     from backend.api.login import Login
