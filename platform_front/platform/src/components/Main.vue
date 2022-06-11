@@ -7,11 +7,15 @@
 
 
 
+
+
+
+
   <!--属于左侧边栏 -->
   
-  <v-navigation-drawer app >
+  <v-navigation-drawer app clipped>
     <!-- -->
-    <v-app-bar height="70" color=primary></v-app-bar>
+    <!-- <v-app-bar height="70" color=primary></v-app-bar> -->
     <MainLeftLists/>
     
   </v-navigation-drawer>

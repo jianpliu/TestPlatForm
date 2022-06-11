@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div id="app" >
-    <v-app-bar height="70" color=primary dark >
+    <v-app-bar  height="70" color=primary dark app  clipped-left >
       
       <!-- <h1>欢迎来到测试平台</h1> -->
       <v-img alt="Vue logo" src="./assets/logo.png"
@@ -17,7 +17,7 @@
     </v-app-bar>
     </div>
    
-      <router-view/>
+    <router-view/>
   
     
     
