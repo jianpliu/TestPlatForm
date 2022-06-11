@@ -2,7 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../components/Login.vue'
 import SignUp from '../components/SignUp.vue'
-
+import Main from '../components/Main.vue'
+import TestReport from '../components/TestReport.vue'
+import TestCase from '../components/TestCase.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -16,6 +18,27 @@ const routes = [
     name: 'SignUp',
     component: SignUp
   },
+  {
+    path: '/main',
+    name: 'Main',
+    component: Main,
+    children:[
+    {
+      path:"/report",
+      name:"TestReport",
+      component:TestReport,
+
+    },
+    {
+      path:"/testcase",
+      name:"TestCase",
+      component:TestCase,
+
+    },
+
+    ]
+  },
+ 
   
 ]
 

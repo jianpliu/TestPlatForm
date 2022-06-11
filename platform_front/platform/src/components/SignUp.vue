@@ -1,4 +1,5 @@
 <template>
+<v-main>
   <div class="sign-up">
   
     <h2>注册</h2>
@@ -29,6 +30,7 @@
     
     <v-btn depressed >注册</v-btn>
   </div>
+</v-main>
 </template>
 
 <script>

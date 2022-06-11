@@ -1,4 +1,5 @@
 <template>
+<v-main>
   <div class="login">
   
    <h2>登陆</h2>
@@ -24,6 +25,7 @@
     <!-- @是vue的语法，将click事件绑定到函数 -->
     <v-btn depressed @click=goSignUp>注册</v-btn>
   </div>
+</v-main>
 </template>
 
 <script>
@@ -47,13 +49,18 @@ export default {
       this.$api.user.login(loginData).then((response)=>{
         // console.log(response);
         // localStorage是存储到浏览器中的一个数据，全局可用
-        localStorage.setItem("token",response.data.access_token);
+        if (response.status==200)
+        {
+          localStorage.setItem("token",response.data.access_token);
+          this.$router.push({"name":"TestCase"})
+        }
+        
 
       });
 
-      this.$api.testcase.getTestcase().then(response=>{
-        console.log(response);
-      });
+      // this.$api.testcase.getTestcase().then(response=>{
+      //   console.log(response);
+      // });
     
 
     
@@ -73,14 +80,14 @@ export default {
 </script>
 
 <style scoped>
-/* .代表class */
-.login{
-   width: 600px;
-   /*将整个标签居中 */
-   margin: 0 auto;
-   /*将文本和按钮居中*/
-   text-align: center;
-}
+  /* .代表class  */
+  .login{
+    width: 600px;
+    /* 将整个标签居中  */
+    margin: 0 auto;
+    /* 将文本和按钮居中 */
+    text-align: center;
+ }
    
 
-</style>
+ </style>
